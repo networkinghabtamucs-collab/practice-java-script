@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>review</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            background-color: aliceblue;
+
+        }
+
+        .my-review {
+            
+            background-color: azure;
+            border: 1px solid red;
+            width: 500px;
+            height: auto;
+            min-height: 330px;
+            margin: auto;
+            padding-bottom: 30px;
+            margin-top: 50px;
+            box-shadow: 1px 1px 10px 10px grey;
+        }
+
+        header h1 {
+            text-align: center;
+            text-decoration-line: underline;
+            text-decoration-color: blue;
+        }
+
+        .conents img {
+            width: 80px;
+            height: 80px;
+            border-radius: 60px;
+            border-right: 8px solid blue;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+        }
+
+        .title {
+            font-size: 19px;
+            text-align: center;
+
+        }
+
+        .title span {
+            color: blue;
+            display: block;
+
+        }
+
+        .para {
+            margin-top: -29px;
+            padding: auto;
+            text-align: center;
+
+        }
+
+        .buttons {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .buttons button {
+
+            padding: 7px;
+            padding-left: 18px;
+            padding-right: 18px;
+            text-align: center;
+            margin: 3px;
+            border: 2px solid wheat;
+            border-radius: 5px;
+            background-color: antiquewhite;
+        }
+
+        button:hover {
+            color: green;
+            background-color: rgb(233, 181, 84);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="my-review">
+        <header>
+            <h1>Review</h1>
+        </header>
+        <main>
+            <div class="conents">
+                <div class="imgs">
+                    <img src="img3.png" class="images" id="pimg">
+                </div>
+                <div class="title">
+                    <h4 class="titl" id="titlee">my title <span id="proffe">developer</span></h4>
+                    
+                </div>
+                <div class="para">
+                    <p class="descript" id="descript">
+                        
+                    </p>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="btn prev">PREV</button>
+                <button class="btn rand">RAND</button>
+                <button class="btn next">NEXT</button>
+            </div>
+        </main>
+    </div>
+
+
+    <script>
+        const review = [
+            {
+                pimg: "img3.png",
+                title: "Title one",
+                prof: "BACKEND DEV",
+                desc: "your review content goes here okey."
+            },
+            {
+                pimg: "IMG2.jpg",
+                title: "Title Two",
+                prof: "UXUI DESIGNER",
+                desc: "write your review content here please"
+            },
+
+            {
+                pimg: "img3.png",
+                title: "Title Three",
+                prof: "FRONTEND DEV",
+                desc: "write your  descritption here "
+            }, {
+                pimg: "img4.jpg",
+                title: "Title Three",
+                prof: "FULSTACK DEV",
+                desc: "some descriptions here also"
+            },
+            {
+                pimg: "IMG1.jpg",
+                title: "Title Four",
+                prof: "UXUI",
+                desc: "some texts here "
+            },
+            {
+                pimg: "img5.jpg",
+                title: "Title Four",
+                prof: "WEB DEV",
+                desc: "here is your review content to be written "
+            }
+        ];
+
+        const photo = document.getElementById('pimg');
+        const revtitle = document.getElementById('titlee');
+        const position = document.getElementById('proffe');
+        const description = document.getElementById('descript');
+
+const contentDiv=document.getElementById(".my-review");
+        const prev = document.querySelector(".prev");
+        const next = document.querySelector(".next");
+        const rand = document.querySelector(".rand");
+        let currentItem = 0;
+
+        window.addEventListener('DOMContentLoaded', function () {
+            showRev()
+        })
+
+        function showRev() {
+            const myitems = review[currentItem];
+            photo.src = myitems.pimg;
+            revtitle.firstChild.textContent = myitems.title;
+            position.textContent = myitems.prof;
+            description.textContent = myitems.desc;
+            contentDiv.classList.remove("slide-animation");
+    
+    // ዳታ መቀየር...
+    
+    setTimeout(() => {
+        contentDiv.classList.add("slide-animation");
+    }, 10);
+        }
+
+        //event listners here
+        prev.addEventListener('click', function () {
+            currentItem--;
+            if (currentItem < 0) {
+                currentItem = review.length - 1;
+            }
+            showRev()
+        
+        })
+
+        next.addEventListener('click', function () {
+            currentItem++;
+            if (currentItem > review.length - 1) {
+                currentItem = 0;
+            }
+            showRev()
+        })
+
+        rand.addEventListener('click', function () {
+            currentItem = Math.floor(Math.random() * review.length);
+            showRev();
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table{
+       padding: 20px;
+      width: 360px;
+      height: 100vh;
+    background-color: rgb(12, 28, 212);
+    color: white;
+    font-size: 25px;
+    margin: auto;
+border-radius: 7px;
+    }
+    th{
+     border-radius: 7px;
+      color: rgb(255, 0, 187);
+       font-size: 30px;
+background-color: bisque;
+    }
+    input{
+      color: red;
+      width: 355px;
+      height: 55px;
+      font-size: 35px;
+      border: none;
+      border-radius: 10px;
+    }
+    tr{
+      cursor: pointer;
+      color: red;
+      width: 100px;
+      height: 49px;
+      margin: 47px;
+      border: none;
+      border-radius: 10px;
+    }
+    tr td{
+      background-color: #fff;
+      color: rgb(247, 0, 161);
+      width: 100px;
+      height: 49px;
+      margin: 2px;;
+      border: none;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.4s ease-in;
+    }
+    tr #trs:hover{
+      background-color: rgba(0, 0, 255,0.1);
+     font-weight: 1900;
+      color: red;
+     transform: translateX(1px);
+    }
+  </style>
+</head>
+<body>
+  
+<table border="1">
+  <th colspan="4">My Simple Calculator</th>
+  <tr>
+    <td colspan="4">
+      <input type="text"  id="display" readonly >
+    </td>
+    
+  </tr>
+<tr>
+    <td id="trs" onclick="clearnum()">CLR</td>
+    <td id="trs"  onclick="appendto('*')">*</td>
+    <td id="trs"  onclick="appendto('/')">/</td>
+    <td id="trs"  onclick="appendto('+')">+</td>
+  </tr>
+   <tr>
+    <td id="trs" onclick="appendto('9')">9</td>
+    <td id="trs" onclick="appendto('8')">8</td>
+    <td id="trs" onclick="appendto('7')">7</td>
+    <td id="trs" rowspan="2" onclick="appendto('sin')">sin</td>
+    
+  </tr>
+
+   <tr>
+    <td id="trs" onclick="appendto('5')">5</td>
+    <td id="trs" onclick="appendto('4')">4</td>
+    <td id="trs"  onclick="appendto('3')">3</td>
+    
+  </tr>
+
+   <tr>
+    <td id="trs" onclick="appendto('2')">2</td>
+    <td id="trs" onclick="appendto('1')">1</td>
+    <td id="trs" onclick="appendto('0')">0</td>
+    <td rowspan="2" id="trs" onclick="performCalculation()">=</td>
+  </tr>
+  <tr>
+    <td colspan="2" id="trs" onclick="clearonenum()" >cancel</td>
+    <td id="trs" onclick="appendto('.')">.</td>
+    
+  
+  </tr>
+</table>
+<p id="forError"></p>
+<script>
+const display = document.getElementById('display');
+const display2 = document.getElementById('forError');
+
+function appendto(input) {
+    const operators = ['+', '-', '*', '/','sin'];
+    const lastChar = display.value.slice(-1);
+
+    // sin ከተጫነ ወዲያውኑ በውስጡ ያለውን ቁጥር አስልቶ ውጤቱን ያሳያል
+    if (input === 'sin') {
+        if (display.value == "num1") {
+            const val = parseFloat(display.value);
+            //Math.sin(val * Math.PI / 180)
+            display.value = Math.sin(val).toFixed(4); 
+        }
+        return;
+    }
+
+    // ኦፕሬተሮች ተደራርበው እንዳይገቡ መከላከል
+    if (operators.includes(input) && operators.includes(lastChar)) {
+        display.value = display.value.slice(0, -1) + input;
+    } 
+    else if (operators.includes(input) && display.value === "") {
+        if (input === '-') display.value += input;
+    }
+    else {
+        display.value += input;
+    }
+}
+
+function clearnum() {
+    display.value = "";
+    display2.innerHTML = "";
+}
+
+function clearonenum() {
+    display.value = display.value.slice(0, -1);
+}
+
+
+function performCalculation() {
+    const displayValue = display.value;
+    if (!displayValue) return;
+
+    // 1. ቁጥሮቹን እና ኦፕሬተሩን እንለያለን
+    // ይህ RegEx ቁጥሮችን (አስርዮሽ ጨምሮ) እና ምልክቶችን ይለያል
+    // ምሳሌ፡ "12.5+5" -> ["12.5", "+", "5"]
+    const tokens = displayValue.match(/(\d+\.?\d*)|([\+\-\*\/])/g);
+
+    if (!tokens || tokens.length < 3) {
+        display2.innerHTML = "ትክክለኛ ሂሳብ ያስገቡ";
+        return;
+    }
+
+    // 2. ዳታዎቹን ለይተን እናውጣ
+    let num1 = parseFloat(tokens[0]);
+    let operator = tokens[1];
+    let num2 = parseFloat(tokens[2]);
+
+    // 3. በምልክቱ መሰረት ሂሳቡን እንስራ
+    let result;
+    switch (operator) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            if (num2 === 0) {
+                display2.innerHTML = "በዜሮ ማካፈል አይቻልም!";
+                return;
+            }
+            result = num1 / num2;
+            break;
+        default:
+            display2.innerHTML = "የማይታወቅ ምልክት";
+            return;
+    }
+
+    // 4. ውጤቱን እናሳይ
+    display.value = result;
+    display2.innerHTML = "";
+}
+  
+</script>
+</body>
+</html>

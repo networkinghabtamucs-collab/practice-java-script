@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+        .header{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+            
+        }
+        .header p{
+            margin-left: -100px;
+            font-size: 40px;}
+         .header .btns{
+            width: 90px;  margin: 26px;
+            height: 38px;
+         }
+    </style>
+ <body>
+    <div class="header" id="header">
+        <p id="para">color change</p>
+    <span id="color"></span>
+    <button class="btns" id="btn">click</button>
+    </div>
+
+    <script>
+     const btn = document.getElementById('btn');
+
+     const colors= [
+    "#FF5733", // ብርቱካናማ
+    "#33FF57", // አረንጓዴ
+    "#3357FF", // ሰማያዊ
+    "#FF33A1", // ሮዝ
+    "#F3FF33", // ቢጫ
+    "#33FFF5", // ሳይያን
+    "#8D33FF", // ቫዮሌት
+    "#FF8D33", // ብርቱካናማ
+    "#5733FF", // ጥቁር ሰማያዊ
+    "#FF3333", // ቀይ
+    "#000000", // ጥቁር
+    "#FFFFFF", // ነጭ
+    "#808080", // ግራጫ
+    "#008080", // ቲል
+    "#FFD700"  // ወርቃማ
+];
+     
+     btn.addEventListener("click", function(){
+        const randomindex = Math.floor(Math.random() *colors.length);
+        const randomnumber =colors[randomindex];
+        document.body.style.backgroundColor=randomnumber;
+      const  randomnumberr =colors[randomindex + 1];
+        console.log(randomnumberr);
+        console.log(randomnumber);
+        btn.style.backgroundColor=randomnumberr;
+        document.getElementById('header').style.backgroundColor=colors[randomindex + 2];
+     })
+    </script>
+ </body>
+</html>
