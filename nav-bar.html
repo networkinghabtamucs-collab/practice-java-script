@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav-bar</title>
+    <style>
+        body{
+                margin: 0;
+                padding: 0;
+        }
+        .nav-bar{
+            display: flex;
+          justify-content: space-between;
+          margin-left: 10px;
+          margin-right: 10px;
+            
+        }
+ .logo{
+    font-weight: bolder;
+ }
+ .logo span{
+    color: rgb(79, 12, 249);
+ }
+ .nav-links{
+    margin-left: auto;
+    margin-right: auto;
+ }
+        .nav-links ul{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-links ul a {
+            text-decoration: none;
+        }
+
+       .nav-links ul a li{
+            list-style: none;
+            padding: 10px;
+            font-size: 18px;   
+        }
+        .nav-links ul a li:hover{
+            color: blue;
+            background-color: beige;
+            border-radius: 10px;
+        }
+        .social-media-icons{
+          list-style: none;
+            padding: 20px;
+
+            font-size: 23px;
+            justify-content: space-between;
+            align-items: end;
+            display: flex;
+            margin-right: 0;
+            margin-bottom: 3px;
+            
+               
+        }
+
+        .social-media-icons i{
+            padding: 4px;
+        }
+        .social-media-icons i:hover{
+            color: blue;
+        }
+        .toggler i{
+            
+          color: red;
+display: none;
+text-align: right;
+align-items: right;
+
+        }
+      @media (max-width:815px){
+       .social-media-icons{
+        display: none;
+       }
+
+       .nav-links ul a li{
+         display: flex;
+         flex-direction: column;
+        justify-content: space-between;
+       }
+    .nav-bar{
+        display: flex;
+        justify-content: space-between;
+    
+        
+    }
+    } 
+       @media (max-width:630px){
+        .nav-links{
+            display: none;
+            position: absolute;
+            top: 49px;
+            left: 5px;
+            right: 5px;
+            justify-content: center;
+            align-items: center
+            ;
+            background-color: antiquewhite;
+            width: auto;
+        }
+
+        .show-links{
+            display: block !important;
+        }
+        .nav-links ul{
+            
+           align-items: center;
+            flex-direction: column;
+        }
+      .nav-links ul a{
+        width: 100%;
+      }
+           .nav-links ul a:hover{
+            color: blue;
+       
+            
+            background-color: beige;
+            border-radius: 10px;
+            align-items: center;
+            justify-content: center;
+           
+        }
+        .toggler i{
+            display: block;
+            margin-top: 23px;
+            font-size: 25px;
+            color: black;
+        
+        }
+       }
+
+     
+    </style>
+</head>
+
+<body>
+    <div class="nav-bar">
+
+
+        <div class="logo">
+            <h2>CODING-WITH- <SPan>HABTAE</SPan></h2>
+        </div>
+
+     <div class="toggler">
+        <i class="fa-solid fa-bars" id="togglee"></i>
+     </div>
+        <div class="nav-links " id="vavs">
+            <ul>
+                <a href="">
+                    <li>Home</li>
+                </a>
+                <a href="">
+                    <li>About</li>
+                </a>
+                <a href="">
+                    <li>Projects</li>
+                </a>
+                <a href="">
+                    <li><Cite></Cite>ontacts</li>
+                </a>
+            </ul>
+        </div>
+
+
+        <div class="social-media-icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-telegram"></i>
+        </div>
+    </div>
+
+
+    <script>
+        const navlinks=document.querySelector('.nav-links');
+        const togglerbtn=document.getElementById('togglee');
+        togglerbtn.addEventListener('click',function(){
+           navlinks.classList.toggle('show-links')
+        })
+    </script>
+</body>
+
+</html>
