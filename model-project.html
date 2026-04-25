@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>model-pro||</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(img4.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: beige;
+        
+        }
+
+        .hero {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            height: 100vh;
+
+
+        }
+
+        .model {
+            margin-bottom: 10px;
+
+            width: 660px;
+            position: fixed;
+            height: auto;
+            text-align: center;
+        }
+
+        .model-content {
+            border: 1px solid green;
+            height: auto;
+            margin-left: -29px;
+            min-height: 340px;
+            margin-top: 100px;
+            box-shadow: 7px 8px 6px 2px  grey;
+            background-color: rgb(202, 202, 170);
+
+        }
+
+        .model-content button {
+            padding: 10px;
+            margin-top: 50px;
+            width: 160px;
+            color: blue;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            font-weight: 500;
+            border-radius: 7px;
+        }
+.model-content button:hover{
+    background-color: blue;
+    opacity: 0.7;
+}
+
+        .model-content h1 {
+            color: rgb(255, 30, 0);
+            font-size: 36px;
+            padding-top: 10px;
+            font-weight: 700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .models {
+            background-color: rgb(255, 255, 255);
+            height: auto;
+            border-radius: 6px;
+            min-height: 200px;
+            transform: translateY(-230px);
+            box-shadow: 5px 2px 3px grey;
+            color: rgb(0, 0, 0);
+            display: none;
+        }
+        .show-models{
+            display: block !important;
+            position: absolute;
+        }
+        .models .close{
+            color: rgb(0, 0, 0);
+            font-size: 12px;
+            background-color:white;
+            margin: 10px;
+            padding: 7px;
+            margin-left: 560px;
+        }
+        .models .close:hover{
+            background-color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <div class="model ">
+            <div class="model-content ">
+                <h1>Model Project</h1>
+                <button id="openbtn">Open Model</button>
+            </div>
+            <div class="models " id="modelcontent">
+                <div><button class="close" id="close"><i class="fa-solid fa-xmark"></i></button></div>
+                <div class="contentgoes"><h2 >model contents goes here </h2></div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati 
+                    illo eveniet voluptas corporis, hic quaerat reiciendis perferendis 
+                    ratione quae? Unde aspernatur doloribus
+                     dignissimos, iure placeat harum minima ullam odio excepturi?</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const modelbtn =  document.getElementById('openbtn');
+        const modelcontent = document.getElementById('modelcontent')
+        const closeBtn = document.getElementById('close');
+
+        modelbtn.addEventListener('click', function(){
+            console.log(modelcontent.classList.toggle('show-models'));
+           // console.log(modelcontent.classList.contains('.show-models'));
+        })
+
+        closeBtn.addEventListener('click', function(){
+            console.log(modelcontent.classList.remove('show-models'));
+           // console.log(modelcontent.classList.contains('.show-models'));
+        })
+    </script>
+</body>
+
+</html>

@@ -16,13 +16,17 @@
           justify-content: space-between;
           margin-left: 10px;
           margin-right: 10px;
-            
+            box-shadow: 19px 1px 10px 1px grey;
+            margin: 0;
         }
  .logo{
     font-weight: bolder;
+    color: black;
+    margin-left: 13px;
  }
  .logo a{
     text-decoration: none;
+    color: black;
  }
  .logo span{
     color: rgb(79, 12, 249);
@@ -89,6 +93,7 @@ align-items: right;
         justify-content: space-between;
        }
     .nav-bar{
+        box-shadow:none;
         display: flex;
         justify-content: space-between;
     
@@ -111,6 +116,7 @@ align-items: right;
 
         .show-links{
             display: block !important;
+        transition: ease 16s !important; 
         }
         .nav-links ul{
             
@@ -133,6 +139,7 @@ align-items: right;
         .toggler i{
             display: block;
             margin-top: 23px;
+            margin-right: 4px;
             font-size: 25px;
             color: black;
         
@@ -182,11 +189,13 @@ align-items: right;
 
 
     <script>
-        const navlinks=document.querySelector('.nav-links');
-        const togglerbtn=document.getElementById('togglee');
-        togglerbtn.addEventListener('click',function(){
-           navlinks.classList.toggle('show-links')
-        })
+       const toglerbtn=document.getElementById('togglee');
+       const navlinks = document.getElementById('vavs');
+    
+       
+toglerbtn.addEventListener('click',function(btnn){ 
+ navlinks.classList.toggle("show-links");
+})
     </script>
 </body>
 

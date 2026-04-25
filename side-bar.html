@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>side-bar</title>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+
+ 
+    .nav-bar {
+        position: absolute;
+        top: 0;
+        width: 330px; 
+        height: 100%;
+        background: white;
+        display: none;
+        flex-direction: column;
+        transition: transform 0.3s ease;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    
+    }
+
+    /* Show sidebar when toggled */
+    .show-links {
+        transform: translateX(0) !important;
+        display: flex !important;
+    }
+
+    /* Header section with Logo and Close Button */
+    .logo-header {
+        display: inline-flex;
+        
+        
+        padding: 20px;
+        padding-right: 35px;
+    }
+
+    .logo h2 {
+        font-size: 20px;
+        letter-spacing: 2px;
+        margin: 0;
+       
+        
+    }
+
+    .logo a {
+        text-decoration: none;
+        color: #102a42;
+    }
+
+    .logo span {
+        color: #49a6e9; 
+    }
+
+    
+    .close-btn {
+        font-size: 1.75rem;
+        background: transparent;
+        border: transparent;
+        color: #bb2525;
+        cursor: pointer;
+        margin-right: 0;
+    }
+
+    
+    .nav-links ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 1rem 1.5rem;
+        color: #617d98;
+        font-size: 1.25rem;
+        text-transform: capitalize;
+        text-decoration: none;
+        transition: all 0.3s linear;
+    }
+
+    .nav-links a:hover {
+        background: #e1f5fe; /* Light blue background on hover */
+        color: #49a6e9;
+        padding-left: 2rem; /* Slight slide effect */
+    }
+
+    /* Social Icons at the Bottom */
+    .social-media-icons {
+        margin-top: auto; /* Pushes icons to bottom */
+        display: flex;
+        justify-content: center;
+        padding-bottom: 2rem;
+        gap: 15px;
+    }
+
+    .social-media-icons i {
+        font-size: 1.5rem;
+        color: #49a6e9;
+        cursor: pointer;
+    }
+
+    /* Toggle Button (The Hamburger) */
+    .toggler {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    }
+
+    #togglee {
+        font-size: 2rem;
+        color: #49a6e9;
+        cursor: pointer;
+    }
+
+    
+</style>
+</head><body>
+    <div class="toggler">
+        <i class="fa-solid fa-bars" id="togglee"></i>
+    </div>
+
+    <div class="nav-bar" id="vavs">
+        <div class="logo-header">
+            <div class="logo">
+                <h2>Coding-with<span>Habtae</span></h2>
+            </div>
+            <button class="close-btn" id="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="nav-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="social-media-icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-behance"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-sketch"></i>
+        </div>
+    </div>
+
+    <script>
+        const navig = document.getElementById('vavs');
+    const showbtn = document.getElementById('togglee');
+    const closebtn = document.getElementById('close-btn');
+
+    showbtn.addEventListener('click',function(){
+        navig.classList.toggle('show-links')
+       // console.log(navig.classList.contains('close-btn'))
+
+    })
+    closebtn.addEventListener('click', function(){
+                navig.classList.toggle('show-links');
+
+    })
+
+    </script>
+</body>
+</html>
