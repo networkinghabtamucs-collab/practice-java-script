@@ -27,10 +27,13 @@
             align-items: center;
             justify-content: center;
             align-content: center;
-
             height: auto;
 
 
+        }
+        .hrobg{
+            background-color: rgb(12, 232, 70);
+            opacity: 0.9;
         }
 
         .model {
@@ -40,12 +43,13 @@
             left: 0px;
             top: 0px;
             height: 100vh;
-            background-color: rgba(2, 234, 91, 0.6);
+            
 
 
         }
 
         .model-content {
+            opacity: 1;
             position: absolute;
             top: 120px;
             right: 120px;
@@ -84,6 +88,8 @@
         }
 
         .models {
+            
+            z-index: 1000;
             position: absolute;
             top: 70px;
             right: 120px;
@@ -95,7 +101,7 @@
             width: auto;
             max-width: 700px;
             box-shadow: 7px 8px 6px 2px grey;
-            background-color: rgb(202, 202, 170);
+            background-color: rgba(202, 202, 170,1);
             display: none;
         }
 
@@ -184,8 +190,8 @@
 </head>
 
 <body>
-    <div class="hero">
-        <div class="model ">
+    <div class="hero " >
+        <div class="model" id="heroo">
             <div class="model-content ">
                 <h1>Model Project</h1>
                 <button id="openbtn">Open Model</button>
@@ -246,14 +252,17 @@
         const modelbtn = document.getElementById('openbtn');
         const modelcontent = document.getElementById('modelcontent')
         const closeBtn = document.getElementById('close');
-
+        const herobtn=document.getElementById('heroo');
         modelbtn.addEventListener('click', function () {
             modelcontent.classList.add('show-models');
+            console.log(herobtn.classList.add('hrobg'));
+
             // console.log(modelcontent.classList.contains('.show-models'));
         })
 
         closeBtn.addEventListener('click', function () {
             modelcontent.classList.remove('show-models');
+            console.log(herobtn.classList.remove('hrobg'));
             // console.log(modelcontent.classList.contains('.show-models'));
         })
     </script>
