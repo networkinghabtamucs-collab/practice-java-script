@@ -15,10 +15,11 @@
         }
 
         .my-review {
-            
+
             background-color: azure;
             border: 1px solid red;
-            width: 500px;
+            width: auto;
+            max-width: 400px;
             height: auto;
             min-height: 330px;
             margin: auto;
@@ -100,11 +101,11 @@
                 </div>
                 <div class="title">
                     <h4 class="titl" id="titlee">my title <span id="proffe">developer</span></h4>
-                    
+
                 </div>
                 <div class="para">
                     <p class="descript" id="descript">
-                        
+
                     </p>
                 </div>
             </div>
@@ -162,7 +163,7 @@
         const position = document.getElementById('proffe');
         const description = document.getElementById('descript');
 
-const contentDiv=document.getElementById(".my-review");
+        const contentDiv = document.getElementById(".my-review");
         const prev = document.querySelector(".prev");
         const next = document.querySelector(".next");
         const rand = document.querySelector(".rand");
@@ -179,14 +180,8 @@ const contentDiv=document.getElementById(".my-review");
             position.textContent = myitems.prof;
             description.textContent = myitems.desc;
             contentDiv.classList.remove("slide-animation");
-    
-    // ዳታ መቀየር...
-    
-    setTimeout(() => {
-        contentDiv.classList.add("slide-animation");
-    }, 10);
-        }
 
+        }
         //event listners here
         prev.addEventListener('click', function () {
             currentItem--;
@@ -194,7 +189,7 @@ const contentDiv=document.getElementById(".my-review");
                 currentItem = review.length - 1;
             }
             showRev()
-        
+
         })
 
         next.addEventListener('click', function () {

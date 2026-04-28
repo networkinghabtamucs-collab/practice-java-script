@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu||</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: aliceblue;
+        }
+
+        .header {
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 850px;
+
+        }
+
+        .navigation {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .navigation ul {
+            display: flex;
+            flex-direction: row;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navigation ul li {
+            width: 49px;
+            padding: 20px;
+            list-style: none;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navigation ul li a {
+            padding: 10px;
+            width: 56px;
+            border-radius: 7px;
+            color: black;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            margin: 10px;
+            background-color: red;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            min-width: 350px;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            box-shadow: 3px 4px 8px grey;
+            border-radius: 12px;
+            width: auto;
+            margin: 10px;
+
+        }
+
+        .photos {
+            width: 151px;
+            height: auto;
+        }
+
+        .photos img {
+
+            min-width: 100px;
+            width: 150px;
+            height: 141px;
+            min-height: 80px;
+            margin-left: 0px;
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+
+        }
+
+        .contents {
+
+            justify-content: space-around;
+            position: relative;
+            width: auto;
+
+
+        }
+
+        .foodname {
+            color: rgb(21, 21, 21);
+            display: flex;
+            font-size: 19px;
+        }
+
+        .foodprice {
+            position: absolute;
+            right: 20px;
+            background-color: aliceblue;
+            top: 30px;
+            color: rgb(240, 139, 8);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            margin-top: -20px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        }
+
+        @media (max-width:660px) {
+            main {
+                display: block;
+                min-width: 350px;
+
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .navigation ul li a {
+
+                min-width: 300px;
+                padding: 13px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .header {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <header>
+            <div class="titl">
+                <h1>Our Menu</h1>
+            </div>
+            <div class="navigation">
+                <ul>
+                    <li class="btns"><a href="#">All</a></li>
+                    <li class="btns"><a href="#">BreakFast</a></li>
+                    <li class="btns"><a href="#">Lunch</a></li>
+                    <li class="btns"><a href="#">Dinner</a></li>
+                </ul>
+            </div>
+
+
+
+
+        </header>
+        <main id="menus">
+            <section>
+                <div class="photos">
+                    <img src="IMG1.jpg" alt="">
+                </div>
+                <div class="contents">
+                    <div class="foodname">
+                        <h2>burger</h2>
+                    </div>
+
+                    <div class="foodprice">
+                        <span>$5555</span>
+
+                    </div>
+                    <hr>
+                    <div class="fooddescrip">
+                        <p>the best breakfast</p>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+        </main>
+    </div>
+
+    <script>
+        const menu = [{
+            catig: "Lunch",
+            phtoto: "img4.jpg",
+            foodtitl: "pizza",
+            fodprice: "23 ETB",
+            fodescriptio: "the best and sewwty food"
+
+        },
+        {
+            catig: "Dinner",
+            phtoto: "img5.jpg",
+            foodtitl: "pizza",
+            fodprice: "23 ETB",
+            fodescriptio: "the best and sewwty food"
+
+        },
+        {
+            catig: "Breakfast",
+            phtoto: "img5.jpg",
+            foodtitl: "pizza",
+            fodprice: "23 ETB",
+            fodescriptio: "the best and sewwty food"
+
+        },
+        {
+            catig: "Breakfast",
+            phtoto: "img5.jpg",
+            foodtitl: "pizza",
+            fodprice: "23 ETB",
+            fodescriptio: "the best and sewwty food"
+
+        },
+         {
+            catig: "Breakfast",
+            phtoto: "img5.jpg",
+            foodtitl: "pizza",
+            fodprice: "23 ETB",
+            fodescriptio: "the best and sewwty food"
+
+        },
+         {
+            catig: "Breakfast",
+            phtoto: "img5.jpg",
+            foodtitl: "pizza",
+            fodprice: "23 ETB",
+            fodescriptio: "the best and sewwty food"
+
+        },
+         {
+            catig: "Breakfast",
+            phtoto: "img5.jpg",
+            foodtitl: "pizza",
+            fodprice: "23 ETB",
+            fodescriptio: "the best and sewwty food"
+
+        },
+
+        {
+
+            catig: "Lunch",
+            phtoto: "img5.jpg",
+            foodtitl: "pizza",
+            fodprice: "23 ETB",
+            fodescriptio: "the best and sewwty food"
+
+        }];
+        const selec = document.querySelectorAll(".btns");
+                selec.forEach(function(btn){
+        btn.addEventListener('click',function(e){
+        // console.log('helkjn'
+let selectMenu =e.currentTarget;
+        if(selectMenu==""){
+
+        }
+
+        })
+                })
+
+
+        const displaymenu = document.getElementById('menus');
+
+        window.addEventListener('DOMContentLoaded', function () {
+            menus(menu);
+
+        })
+        function menus(menutiems) {
+            let foodmenus = menutiems.map(function (foodmenus) {
+                return ` <section>
+                <div class="photos">
+                    <img src="${src = foodmenus.phtoto}">
+                </div>
+                <div class="contents">
+                    <div class="foodname">
+                        <h2>${foodmenus.foodtitl}</h2>
+                    </div>
+
+                    <div class="foodprice">
+                        <span>${foodmenus.fodprice}</span>
+
+                    </div>
+                    <hr>
+                    <div class="fooddescrip">
+                        <p>${foodmenus.fodescriptio}</p>
+                    </div>
+                </div>
+            </section>`
+            });
+            foodmenus = foodmenus.join("");
+            displaymenu.innerHTML = foodmenus;
+
+        }
+
+function test(a){
+     console.log(a);
+}
+
+test(0o100);
+test(100);
+test(0b100)
+test(0x100)
+test("0x100")
+    </script>
+</body>
+
+</html>
