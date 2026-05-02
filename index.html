@@ -1,1527 +1,377 @@
-
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-	<title>Evangadi Tech</title>
-	<meta name="description"
-		content="Move your business to the digital world and elevate your competitive edge by enhancing operational efficiency, enriching customer experiences, expanding your market reach, and grounding decisions in data">
-	<meta name="keywords"
-		content="App development services, Mobile app developers, Custom software development, iOS/Android app development, Cross-platform app solutions, App design and prototyping, Enterprise app development">
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="author" content="Pixlogix">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game||</title>
+    <style>
+        header {
+            background-color: azure;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        main {
+            height: 90vh;
+        }
+
+        section {
+            box-shadow: 5px 7px 3px grey;
+            border-radius: 8px;
+            min-height: 45vh;
+            height: auto;
+            max-width: 60%;
+            width: auto;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .winners_badg {
+            display: block;
+            height: 35vh;
+            max-width: 60%;
+            width: auto;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .description {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: auto;
+            height: auto;
+            color: aliceblue;
+        }
+
+        .description h2 {
+            color: orange;
+            font-size: 27px;
+            font-weight: 900;
+            text-decoration: underline;
+        }
+
+        .description p {
+            color: orange;
+        }
+
+        .selct_buttin {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            display: flex;
+            width: auto;
+        }
+
+        .selct_buttin button {
+            width: 160px;
+            height: 40px;
+            margin: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: cornflowerblue;
+        }
+
+        .selct_buttin button:hover {
+            background-color: rgb(25, 0, 255);
+            transition: 0.7s ease-in;
+            cursor: pointer;
+            transform: skewX(20deg);
+        }
 
 
-	<meta property="og:url" content="https://evangaditech.com/" />
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content="Evangadi Tech: Elevating your business to the digital era" />
-	<meta property="og:description"
-		content="Move your business to the digital world and elevate your competitive edge by enhancing operational efficiency, enriching customer experiences, expanding your market reach, and grounding decisions in data" />
-	<meta property="og:image" content="https://evangaditech.com/images/misc/banners/move-to-digital.jpg" />
 
+        .winner-glow {
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+            border-radius: 50%;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 50px;
+            box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+            animation: pulse-gold 1.5s infinite;
+        }
 
-	<link rel="shortcut icon" href="images/misc/favicon.png">
-	<!-- favicon -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet">
-	<!-- Google fonts -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<!-- Bootstrap css-->
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<!-- Font awesome css-->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<!-- Owl carousel css-->
-	<link rel="stylesheet" href="css/snazzy-info-window.min.css">
-	<!-- Map Infowindow css-->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<!-- Magnific popup css-->
-	<link rel="stylesheet" href="css/iconfont.css">
-	<!-- Line icons css-->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Animations css-->
-	<link rel="stylesheet" href="css/style.css?v=1">
-	<!-- Style css-->
-	<link rel="stylesheet" href="css/responsive.css">
-	<!-- Responsive css-->
-	<script src="js/modernizr.min.js"></script>
+        @keyframes pulse-gold {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 20px rgba(255, 215, 0, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+            }
+        }
+
+        .winner {
+            display: none;
+        }
+.show_losser{
+    display: block;
+    color: rgb(245, 59, 12);
+}
+        .losser {
+            display: none;
+        }
+.no{
+    display: none;
+}
+.tie{
+    display: block;
+    color: blue;
+    
+}
+
+        .show-winners{
+            display: block;
+            color: rgb(30, 254, 1);
+        }
+        @media (max-width:660px) {
+
+            section {
+                box-shadow: 5px 7px 3px grey;
+                border-radius: 8px;
+                height: auto;
+                min-width: 100%;
+                background: linear-gradient(to left, green, black);
+                align-items: center;
+                justify-content: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .winners_badg {
+                display: block;
+                height: 35vh;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                background-color: aquamarine;
+                text-align: center;
+            }
+
+            .description {
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .description h2 {
+                color: orange;
+                font-size: 27px;
+                font-weight: 900;
+                text-decoration: underline;
+            }
+
+            .description p {
+                color: orange;
+            }
+
+            .selct_buttin {
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                display: block;
+                margin-top: 10px;
+
+            }
+
+            .selct_buttin button {
+                display: block;
+                width: 160px;
+                height: 40px;
+                margin: 20px;
+                border: none;
+                border-radius: 5px;
+                background-color: cornflowerblue;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+        }
+    </style>
 </head>
 
 <body>
-	<div id="wrapper">
-		<!--preloader start-->
-		<div class="preloader-box">
-			<div class="preloader loading">
-				<span class="slice"></span>
-				<span class="slice"></span>
-				<span class="slice"></span>
-				<span class="slice"></span>
-				<span class="slice"></span>
-				<span class="slice"></span>
-			</div><!--/.preloader-->
-		</div><!--/.preloader-box-->
-		<!--preloader end-->
+    <header>
+        <div class="logo">
+            <h1>SCISSOR GAME</h1>
+        </div>
 
-		<!--header start-->
-		<header id="header">
-			<nav class="navbar m-0">
-				<div class="container navigation-menu">
-					<div class="row">
-						<div class="col-sm-4 col-xs-7 navbar-header">
-							<div class="logo-wrapper-header">
-								<span class="logobox">
-									<a id="logo" href="/"><img src="images/misc/evangadi-logo-white.png" alt="" /></a>
-								</span><!--/.logobox-->
-							</div>
-						</div>
-						<div class="navigation-row col-sm-8 col-xs-5">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainmenu">
-								<span class="menulines"></span>
-							</button>
-							<nav class="collapse navbar-collapse pull-right" id="mainmenu">
-								<ul class="nav navbar-nav scrollnav">
-									<li class="active"><a href="#home">Home</a></li>
-									<li><a href="#services">Services</a></li>
-									<li><a href="#about">About</a></li>
-									<li><a href="#portfolio">Portfolio</a></li>
-									<!-- <li><a href="#jobs">Jobs</a></li> -->
-									<li><a href="#contact">Contact</a></li>
-									<li class="hire-btn header-btn">
-										<a href="#"><i class="glyphicon glyphicon-user"></i> Call
-											+1-202-386-2702</a>
-									</li>
-								</ul>
-							</nav>
-							<!--/#mainmenu-->
-						</div>
-					</div>
-				</div>
-			</nav>
-		</header>
-		<!--/#header-->
-		<!--header end-->
+    </header>
 
-		<!--home slider start-->
-		<div id="home">
-			<!-- Hero slider start-->
-			<div class="banner-section section-dark">
-				<div class="main-slider owl-carousel">
-					<!-- slider item start-->
-					<div class="item">
-						<div class="slide-img bg-cover" style="
-                  background-image: url(images/misc/banners/move-to-digital.jpg);
-                "></div>
-						<div class="slider-contentbox v-middle text-lg">
-							<div class="container">
-								<div class="row">
-									<div class="col col-sm-6 col-lg-5">
-										<div class="slider-content animate-me">
-											<h2>Elevate your business to the digital</h2>
-											<p>
-												This will help you elevate your competitive edge by enhancing operational efficiency, enriching
-												customer experiences, expanding your market reach, and grounding decisions in data.
-											</p>
-											<div class="btn-row">
-												<a href="#contact" class="btn">Contact Us
-													<span><i class="fa fa-chevron-right"></i></span></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- slider item end-->
 
-					<!-- slider item start-->
-					<div class="item">
-						<div class="slide-img bg-cover" style="
-                  background-image: url(images/misc/banners/applications-dev.jpg);
-                ">
-						</div>
-						<div class="slider-contentbox v-middle text-lg">
-							<div class="container">
-								<div class="row">
-									<div class="col col-sm-6 col-lg-5">
-										<div class="slider-content animate-me">
+    <main>
+        <section>
+            <div class="description">
+                <h2>These is simple game by html css and js for practice</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+                    iure consectetur odit. Animi, odio
+                    nostrum est harum dolor fugit vitae.
+                </p>
+            </div>
+            <div class="selct_buttin">
+                <div class="buttons Scissor">
+                    <button class="btns Scissor">Scissor</button>
+                </div>
+                <div class="buttons">
+                    <button class="btns Rock">Rock</button>
+                </div>
+                <div class="buttons">
+                    <button class="btns Papper">Papper</button>
+                </div>
+            </div>
+        </section>
+        <section class="winners_badg">
+
+
+            <div class="winner" id="win">
+                <h2>YOU WIN!</h2>
+                <p class="winner-glow">🥇</p>
+
+            </div>
+            <div class="losser " id="losse">
+                <h2>YOU LOSE !</h2>
+                <p class="winner-glow">🥇</p>
+
+            </div>
+            <div class="no" id="no-winner">
+                <h1>GAME OVER!</h1>
+                <h2>NO ONE CAN WIN  GAME TIE !</h2>
+                <p class="winner-glow">✋</p>
+
+            </div>
+
+        </section>
+    </main>
+
+    <script>
+        const btns = document.querySelectorAll('.btns');
+        const winner=document.getElementById('win');
+        const looser=document.getElementById('losse');
+        const gameover=document.getElementById('no-winner');
+        // console.log(btns)
+        btns.forEach(function (tar) {
+            tar.addEventListener('click', function (e) {
+                
+                const cururuntvar = e.currentTarget.classList;
+                let user_selection;
+                if (cururuntvar.contains('Scissor')) {
+                    user_selection = "Scissor";
+                    console.log("users selection",user_selection)
+                }
+
+                else if (cururuntvar.contains('Rock')) {
+                    user_selection = "Rock";
+                    console.log("users selection",user_selection)
+                }
+                else  {
+                    user_selection = "Papper";
+                    console.log("users selection",user_selection)
+                }
+                let computerchoose =Math.floor(Math.random()*3+1)
+
+                let compters_selection;
+if(computerchoose===1){
+compters_selection="Papper";
+ console.log("comp selection",compters_selection)}
+    
+else if(computerchoose===2){
+compters_selection="Rock";
+ console.log("comp selection",compters_selection)}
+else {
+compters_selection="Scissor";
+ console.log("comp selection",compters_selection)
+};
 
 
 
-											<h2>Fullstack Application Development</h2>
-											<p>
-												To effectively operate your business in the digital realm, you'll require a web or mobile based
-												application. This is where our expertise comes into play. Our team of developers, who are
-												specially trained in crafting applications that enhance operational efficiency, thereby adding
-												significant value to your business.
-											</p>
-											<div class="btn-row">
-												<a href="#contact" class="btn">Contact Us
-													<span><i class="fa fa-chevron-right"></i></span></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- slider item end-->
+if ((user_selection === "Papper" && compters_selection === "Rock") ||
+                (user_selection ==="Rock" &&  compters_selection === "Scissor") ||
+                (user_selection == "Scissor" &&  compters_selection === "Papper")) {
+                console.log("okkk you win...");
 
-					<!-- slider item start-->
-					<div class="item">
-						<div class="slide-img bg-cover" style="
-                  background-image: url(images/misc/banners/data-center.jpg);
-                "></div>
-						<div class="slider-contentbox v-middle text-lg">
-							<div class="container">
-								<div class="row">
-									<div class="col col-sm-6 col-lg-5">
-										<div class="slider-content animate-me">
-											<h2>Secured Data Center Infrastructure</h2>
-											<p>
-												The last two decades have been predominantly focused on applications, but the coming two decades
-												will shift towards intelligence. The source of this intelligence will be data.
-											</p>
-											<div class="btn-row">
-												<a href="#contact" class="btn">Contact Us
-													<span><i class="fa fa-chevron-right"></i></span></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- slider item end-->
-					<!-- slider item start-->
-					<div class="item">
-						<div class="slide-img bg-cover" style="
-                  background-image: url(images/misc/banners/digital-team.jpg);
-                "></div>
-						<div class="slider-contentbox v-middle text-lg">
-							<div class="container">
-								<div class="row">
-									<div class="col col-sm-6 col-lg-5">
-										<div class="slider-content animate-me">
-											<h2>Outsource your digital department</h2>
-											<p>
-												Until you establish a fully robust digital department in-house, partnering with us can provide
-												valuable support in reaching that goal. This collaboration is not only efficient but also
-												cost-effective as you begin your transition.
-											</p>
-											<div class="btn-row">
-												<a href="#contact" class="btn">Contact Us
-													<span><i class="fa fa-chevron-right"></i></span></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- slider item end-->
+                winner.classList.toggle("show-winners")
+            }
 
-				</div>
-				<a href="#" class="scroll-down"><img src="images/mouse.svg" alt="" /> Scroll down</a>
-			</div>
-		</div>
-		<!--/#home-->
-		<!--home slider end-->
+else if ((user_selection === "Papper" && compters_selection=== "Papper") ||
+                (user_selection === "Rock" && compters_selection === "Rock") ||
+                (user_selection === "Scissor" && compters_selection === "Scissor")) {
+                console.log("no one is winner the game tie over")
+                gameover.classList.toggle("tie")
+            }
 
-		<div id="main">
+            else if ((user_selection === "Rock" && compters_selection === "Papper") ||
+                (user_selection=== "Scissor" && compters_selection === "Rock") ||
+                (user_selection === "Papper" && compters_selection === "Scissor")) {
+                console.log("ooo computer you win(youser loss)...")
+                looser.classList.toggle("show_losser")
+            }; 
+            })
 
-			<!-- core services section start-->
-			<div id="services" class="section services-section bg-gray border-top-bottom animated-row">
-				<div class="container container-small">
-					<div class="title-block row text-center">
-						<div class="col col-md-6 col-md-push-3">
-							<div class="section-title">
-								<em class="font-weight-600">EvangadiTech</em>
-								<h2>Core Services</h2>
-								<span class="hexagon-icon"><i></i></span>
-							</div><!--/.section-title-->
-						</div>
-					</div><!--/.title-block-->
-					<div class="service-list">
-						<div class="row no-spacing-row">
-							<div class="col col-sm-6 col-md-4">
-								<div class="servicebox animate matchheightbox" data-animate="fadeIn">
-									<span class="service-icon"><i class="icon-mobile"></i></span>
-									<div class="service-content">
-										<h3>iOS/Android app development</h3>
-										<p>Crafting custom, user-friendly iOS and Android applications tailored to meet your specific
-											business needs and enhance user engagement.</p>
-									</div><!--/.service-content-->
-								</div><!--/.servicebox-->
-							</div><!--/.col-->
-							<div class="col col-sm-6 col-md-4">
-								<div class="servicebox animate matchheightbox" data-animate="fadeIn">
-									<span class="service-icon"><i class="icon-browser"></i></span>
-									<div class="service-content">
-										<h3>Web application development</h3>
-										<p>Developing web applications with seamless functionality and intuitive interfaces to elevate your
-											online presence and user experience.</p>
-									</div><!--/.service-content-->
-								</div><!--/.servicebox-->
-							</div><!--/.col-->
-							<div class="col col-sm-6 col-md-4">
-								<div class="servicebox animate matchheightbox" data-animate="fadeIn">
-									<span class="service-icon"><i class="icon-documents"></i></span>
-									<div class="service-content">
-										<h3>Data center development</h3>
-										<p>Building efficient data centers, optimized for scalability and security, to support your
-											business's growing data storage and processing needs</p>
-									</div><!--/.service-content-->
-								</div><!--/.servicebox-->
-							</div><!--/.col-->
-							<div class="col col-sm-6 col-md-4">
-								<div class="servicebox animate matchheightbox" data-animate="fadeIn">
-									<span class="service-icon"><i class="icon-laptop"></i></span>
-									<div class="service-content">
-										<h3>Custom software development</h3>
-										<p>Uniquely designed software to align with your business logic and
-											operational requirements, ensuring a perfect fit for your specific needs.</p>
-									</div><!--/.service-content-->
-								</div><!--/.servicebox-->
-							</div><!--/.col-->
-							<div class="col col-sm-6 col-md-4">
-								<div class="servicebox animate matchheightbox" data-animate="fadeIn">
-									<span class="service-icon"><i class="icon-adjustments"></i></span>
-									<div class="service-content">
-										<h3>Digital strategy consulting</h3>
-										<p>Digital strategy consulting to guide businesses in leveraging the latest technologies and trends
-											for optimized digital transformation and competitive edge</p>
-									</div><!--/.service-content-->
-								</div><!--/.servicebox-->
-							</div><!--/.col-->
-							<div class="col col-sm-6 col-md-4">
-								<div class="servicebox animate matchheightbox" data-animate="fadeIn">
-									<span class="service-icon"><i class="icon-basket"></i></span>
-									<div class="service-content">
-										<h3>Developing e-commerce platform</h3>
-										<p>Comprehensive e-commerce platforms, tailored to your business, that offer seamless shopping
-											experiences and scalable solutions for online shopping</p>
-									</div><!--/.service-content-->
-								</div><!--/.servicebox-->
-							</div><!--/.col-->
-							<div class="col col-sm-6 col-md-4">
-								<div class="servicebox animate matchheightbox" data-animate="fadeIn">
-									<span class="service-icon"><i class="icon-gears"></i></span>
-									<div class="service-content">
-										<h3>Office network setup</h3>
-										<p>Setting up efficient and secure office networks, customized to meet your business's specific
-											communication and operational needs</p>
-									</div><!--/.service-content-->
-								</div><!--/.servicebox-->
-							</div><!--/.col-->
-							<div class="col col-sm-6 col-md-4">
-								<div class="servicebox animate matchheightbox" data-animate="fadeIn">
-									<span class="service-icon"><i class="icon-megaphone"></i></span>
-									<div class="service-content">
-										<h3>Digital marketing</h3>
-										<p>Executing targeted digital marketing strategies that enhance online presence, engage audiences,
-											and drive growth through data-driven approaches.</p>
-									</div><!--/.service-content-->
-								</div><!--/.servicebox-->
-							</div><!--/.col-->
-							<div class="col col-sm-6 col-md-4">
-								<div class="servicebox animate matchheightbox" data-animate="fadeIn">
-									<span class="service-icon"><i class="icon-camera"></i></span>
-									<div class="service-content">
-										<h3>App design and prototyping</h3>
-										<p>Crafting visually appealing and intuitive app designs, followed by creating detailed prototypes,
-											to bring your app concept to life</p>
-									</div><!--/.service-content-->
-								</div><!--/.servicebox-->
-							</div><!--/.col-->
-						</div><!--/.row-->
-					</div><!--/.service-list-->
-				</div><!--/.container-->
-			</div><!--/.section-->
-			<!-- core services section end-->
+        })
 
-			<!--Digital marketing section start-->
-			<div id="digital" class="section services-section animated-row">
-				<div class="title-block row text-center sub-section-block">
-					<div class="col col-md-6 col-md-push-3">
-						<div class="section-title">
-							<em class="font-weight-600">Digital Marketing</em>
-							<h2>OUTBOUND & INBOUND</h2>
-							<span class="hexagon-icon"><i></i></span>
-						</div>
-					</div>
-				</div>
 
-				<div class="experience-section border-top-bottom animated-row">
-					<div class="row no-spacing-row">
-						<div class="col col-md-6 bg-black matchheightbox">
-							<div class="p-50">
-								<h3 class="title-style">Outbound Marketing</h3>
-								<p>
-									This is a technique where you reach out to potential customers
-								</p>
-								<div class="experience-list">
-									<div class="experience-row clearfix m-b-30 animate" data-animate="fadeIn">
-										<div class="experience-col-left m-r-20 p-r-20">
 
-											<div class="experience-details overflowhidden font-secondary">
-												<span class="text-white">Step 1:</span>
-												<strong class="text-uppercase text-primary">Identifying the right kind of customers</strong>
-											</div>
-											<!--/.experience-details-->
-										</div>
-										<!--/.experience-col-->
-										<p class="overflowhidden m-0">
-											Knowing your customers is critical; you must understand
-											the everyday behaviors of your target customer -
-											interests, lifestyles, income, ethnicity, language,
-											hobbies and more.
-										</p>
-									</div>
-									<!--/.experience-row-->
 
-									<div class="experience-row clearfix m-b-30 animate" data-animate="fadeIn">
-										<div class="experience-col-left m-r-20 p-r-20">
 
-											<div class="experience-details overflowhidden font-secondary">
-												<span class="text-white">Step 2:</span>
-												<strong class="text-uppercase text-primary">Getting infront of potential customers</strong>
-											</div>
-											<!--/.experience-details-->
-										</div>
-										<!--/.experience-col-->
-										<p class="overflowhidden m-0">
-											This is every business' most difficult challenge. Among
-											the many options available, the easiest would be to pay
-											Google and Facebook to get you in front of potential
-											customers.
-										</p>
-									</div>
-									<!--/.experience-row-->
 
-									<div class="experience-row clearfix m-b-30 animate" data-animate="fadeIn">
-										<div class="experience-col-left m-r-20 p-r-20">
 
-											<div class="experience-details overflowhidden font-secondary">
-												<span class="text-white">Step 3:</span>
-												<strong class="text-uppercase text-primary">Grabbing attention</strong>
-											</div>
-											<!--/.experience-details-->
-										</div>
-										<!--/.experience-col-->
-										<p class="overflowhidden m-0">
-											With any medium you employ, you will have mostly between 2
-											- 5 seconds to catch the attention of any potential
-											customer. This requires professional artistry to produce
-											quality art that can grab attention. Video is out
-											performing the other media types at the moment.
-										</p>
-									</div>
-									<!--/.experience-row-->
 
-									<div class="experience-row clearfix m-b-30 animate" data-animate="fadeIn">
-										<div class="experience-col-left m-r-20 p-r-20">
 
-											<div class="experience-details overflowhidden font-secondary">
-												<span class="text-white">Step 4:</span>
-												<strong class="text-uppercase text-primary">Creating a great first impression</strong>
-											</div>
-											<!--/.experience-details-->
-										</div>
-										<!--/.experience-col-->
-										<p class="overflowhidden m-0">
-											What potential customers think of your company and their
-											decision to do business with you or not is determined by
-											their first impressions of you. People judge your business
-											by your website, your social media accounts, reviews and
-											the content you put out there.
-										</p>
-									</div>
-									<!--/.experience-row-->
 
-									<div class="experience-row clearfix animate" data-animate="fadeIn">
-										<div class="experience-col-left m-r-20 p-r-20">
+        // function sGame() {
+        //     let users_ch;
+        //     const enterCho = prompt("Enter your choice", users_ch);
+        //     let user_choosed = enterCho.toLowerCase();
+        //     //console.log(user_choosed)
+        //     let computer_choi;
+        //     let computer_choosed = Math.floor(Math.random() * 3 + 1);
+        //     //console.log(computer_choosed)
 
-											<div class="experience-details overflowhidden font-secondary">
-												<span class="text-white">Step 5:</span>
-												<strong class="text-uppercase text-primary">Bringing them in
-												</strong>
-											</div>
-											<!--/.experience-details-->
-										</div>
-										<!--/.experience-col-->
-										<p class="overflowhidden m-0">
-											This is the ultimate goal. By the time you get to this
-											stage, some people may have already come to the decision
-											to use your services, while others will require a little
-											nudge.
-										</p>
-									</div>
-									<!--/.experience-row-->
-								</div>
-							</div>
-						</div>
-						<!--/.col-->
-						<div class="col col-md-6 bg-gray matchheightbox">
-							<div class="p-50">
-								<h3 class="title-style">Inbound Marketing</h3>
-								<p>
-									This technique allows you to show up before your competitors
-								</p>
-								<div class="experience-list">
-									<div class="experience-row clearfix m-b-30 animate" data-animate="fadeIn">
-										<div class="experience-col-left m-r-20 p-r-20">
+        //     if (computer_choosed = 1) {
+        //         computer_choi = "rock";
+        //     }
+        //     else if (computer_choosed = 2) {
+        //         computer_choi = "scissor";
+        //     }
+        //     else {
+        //         computer_choi = "papper";
+        //     }
 
-											<div class="experience-details overflowhidden font-secondary">
-												<span>Step 1:</span>
-												<strong class="text-uppercase text-black">Identify What your customers search often</strong>
-											</div>
-											<!--/.experience-details-->
-										</div>
-										<!--/.experience-col-->
-										<p class="overflowhidden m-0">
-											It all starts by researching popular search terms your
-											potential customers type into search engines like Google.
-										</p>
-									</div>
-									<!--/.experience-row-->
-									<div class="experience-row clearfix m-b-30 animate" data-animate="fadeIn">
-										<div class="experience-col-left m-r-20 p-r-20">
 
-											<div class="experience-details overflowhidden font-secondary">
-												<span>Step 2:</span>
-												<strong class="text-uppercase text-black">Search Engine Optimization (SEO)</strong>
-											</div>
-											<!--/.experience-details-->
-										</div>
-										<!--/.experience-col-->
-										<p class="overflowhidden m-0">
-											This is basically optimizing your online content following
-											the best practices that are recomended by search engines.
-											If you optimise your content better than your competitor,
-											Google will favor your business over your competitors'.
-										</p>
-									</div>
-									<!--/.experience-row-->
-									<div class="experience-row clearfix m-b-30 animate" data-animate="fadeIn">
-										<div class="experience-col-left m-r-20 p-r-20">
 
-											<div class="experience-details overflowhidden font-secondary">
-												<span>Step 3:</span>
-												<strong class="text-uppercase text-black">Search Engine Marketing (SEM)</strong>
-											</div>
-											<!--/.experience-details-->
-										</div>
-										<!--/.experience-col-->
-										<p class="overflowhidden m-0">
-											Sometimes, no matter how much you optimise the content on
-											your website, it is very hard to win over some keywords.
-											The alternative would be get into an agreement with Google
-											and pay a certain amount to be shown at the top.
-										</p>
-									</div>
-									<!--/.experience-row-->
+        //     console.log("user selected", user_choosed)
+        //     console.log("computer selected", computer_choi)
 
-									<div class="experience-row clearfix m-b-30 animate" data-animate="fadeIn">
-										<div class="experience-col-left m-r-20 p-r-20">
+            
 
-											<div class="experience-details overflowhidden font-secondary">
-												<span>Step 4:</span>
-												<strong class="text-uppercase text-black">Creating a great first impression</strong>
-											</div>
-											<!--/.experience-details-->
-										</div>
-										<!--/.experience-col-->
-										<p class="overflowhidden m-0">
-											What potential customers think of your company and their
-											decision to do business with you or not is determined by
-											their first impressions of you. People judge your business
-											by your website, your social media accounts, reviews and
-											the content you put out there.
-										</p>
-									</div>
-									<!--/.experience-row-->
+            
 
-									<div class="experience-row clearfix m-b-30 animate" data-animate="fadeIn">
-										<div class="experience-col-left m-r-20 p-r-20">
 
-											<div class="experience-details overflowhidden font-secondary">
-												<span>Step 5:</span>
-												<strong class="text-uppercase text-black">Bringing them in</strong>
-											</div>
-											<!--/.experience-details-->
-										</div>
-										<!--/.experience-col-->
-										<p class="overflowhidden m-0">
-											This is the ultimate goal. By the time you get to this
-											stage, some people may have already come to the decision
-											to use your services, while others will require a little
-											nudge. You use your website and other medias to nudge them
-											a bit more.
-										</p>
-									</div>
-									<!--/.experience-row-->
-								</div>
-								<!--/.experience-list-->
-							</div>
-						</div>
-						<!--/.col-->
-					</div>
-				</div><!--/.education-section-->
-			</div>
-			<!--Digital marketing section end-->
-
-			<!--about section start-->
-			<div id="about" class="section about-section">
-				<div class="container">
-					<div class="title-block row text-center">
-						<div class="col col-md-6 col-md-push-3">
-							<div class="section-title">
-								<em class="font-weight-600">Who we are</em>
-								<h2>About Us</h2>
-								<span class="hexagon-icon"><i></i></span>
-							</div><!--/.section-title-->
-						</div>
-					</div><!--/.title-block-->
-					<div class="row">
-						<div class="col col-sm-6 col-lg-4">
-							<div class="profile-pic">
-								<svg class="picture-box-main" xmlns="http://www.w3.org/2000/svg" width="463" height="478"
-									viewBox="0 0 463 478">
-									<image xlink:href="images/misc/who-we-are5.jpg" width="463" height="478" />
-								</svg>
-								<svg class="picture-box" xmlns="http://www.w3.org/2000/svg" width="463" height="478"
-									viewBox="0 0 463 478">
-									<clippath id="svgPath">
-										<path class="shape-01"
-											d="M446.453,315.122V162.8a81.583,81.583,0,0,0-41.008-70.71L272.936,15.927a82.323,82.323,0,0,0-82.014,0L58.413,92.088A81.582,81.582,0,0,0,17.4,162.8V315.122a81.582,81.582,0,0,0,41.008,70.709l132.509,76.162a82.337,82.337,0,0,0,82.014,0l132.509-76.162A81.582,81.582,0,0,0,446.453,315.122Z" />
-									</clippath>
-									<path id="Profile_pic_border" data-name="Profile pic border" class="shape-02"
-										d="M420.44,385.875l-134.269,76.17a84.339,84.339,0,0,1-54.674,9.913,84.337,84.337,0,0,1-54.673-9.913L42.555,385.875A81.406,81.406,0,0,1,1,315.157V162.815A81.409,81.409,0,0,1,42.555,92.1l134.269-76.17A84.333,84.333,0,0,1,231.5,6.014a84.336,84.336,0,0,1,54.674,9.913L420.44,92.1a81.412,81.412,0,0,1,41.553,70.718V315.157A81.409,81.409,0,0,1,420.44,385.875Zm26.013-70.753V162.8a81.583,81.583,0,0,0-41.008-70.71L272.936,15.927a82.323,82.323,0,0,0-82.014,0L58.413,92.088A81.582,81.582,0,0,0,17.4,162.8V315.122a81.582,81.582,0,0,0,41.008,70.709l132.509,76.162a82.337,82.337,0,0,0,82.014,0l132.509-76.162A81.582,81.582,0,0,0,446.453,315.122Z" />
-
-								</svg>
-							</div><!--/.profile-pic-->
-						</div><!--/.col-->
-						<div class="col col-sm-6 col-lg-4">
-							<div class="about-contentbox last-p-no-margin">
-								<p class="font-secondary text-darkgray">Rather than presenting you with just the usual corporate
-									overview, I'd like to share the story behind Evangadi's inception and the commitment we hold to our
-									clients.</p>
-								<p>My name is Adugna Bekele, the founder of this development shop. Prior to founding Evangadi, I used to
-									work as
-									a senior software engineer taking part in various projects in the US. For your reference, I've listed
-									some of these projects below. In 2016, I embraced the challenge of founding my own agency, with the
-									goal of offering direct services to clients. Now, with over eight years in our experience, we are a
-									dedicated team of
-									highly proficient software engineers, collaborating to provide top-tier solutions to our clients.</p>
-								<p>Our pledge to you is transparency, integrity, and relentless effort. We are always at
-									your service, ready to address your queries and offer the most effective solutions tailored to your
-									needs.</p>
-							</div><!--/.about-contentbox-->
-						</div><!--/.col-->
-						<div class="col col-sm-12 col-lg-4">
-							<ul class="list list-style-01 m-b-40">
-								<li><strong>Direct number:</strong> +1-202-386-2702</li>
-								<li><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="41323431312e3335012437202f262025286f222e2c">[email&#160;protected]</a></li>
-								<li><strong>Head office:</strong> Maryland USA</li>
-								<li><strong>Additional branch:</strong> Addis Ababa, Ethiopia</li>
-								<li><strong>WhatsApp number:</strong> +1-202-386-2702</li>
-								<li><strong>Telegram handle:</strong> @evangaditech</li>
-							</ul><!--/.list-style-01-->
-						</div><!--/.col-->
-					</div><!--/.row-->
-				</div><!--/.container-->
-			</div><!--/.section-->
-			<!--about section end-->
-
-			<!--portfolio section tart-->
-			<div id="portfolio" class="section  bg-gray  portfolio-section animated-row">
-				<div class="container">
-					<div class="title-block row text-center">
-						<div class="col col-md-6 col-md-push-3">
-							<div class="section-title">
-								<em class="font-weight-600">Founder's Portfolio</em>
-								<h2>Portfolio</h2>
-								<span class="hexagon-icon"><i></i></span>
-							</div><!--/.section-title-->
-						</div><!--/.col-->
-					</div><!--/.title-block-->
-					<div class="portfolio-row">
-						<div class="portfolio-slider owl-carousel has-controls fullwidth-slider">
-							<div class="item filter-html filter-javascript filter-magento">
-								<div class="portfolio-box">
-									<figure><img src="images/misc/dhs2.jpg" alt="" /></figure>
-									<div class="portfolio-overlay">
-										<div class="portfolio-content">
-											<span class="label">Department of Homeland Security</span>
-											<h3 class="title-style-01">Senior Developer</h3>
-											<p>Helped improve the main website for the Department of Homeland Security</p>
-											<p><span class="label"><a href="https://www.dhs.gov/" target="_blank">dhs.gov</a></span></p>
-										</div><!--/.portfolio-content-->
-									</div><!--/.portfolio-overlay-->
-								</div><!--/.portfolio-box-->
-							</div><!--/.item-->
-							<div class="item filter-wordpress filter-html">
-								<div class="portfolio-box">
-									<figure><img src="images/misc/umd.jpg" alt="" /></figure>
-									<div class="portfolio-overlay">
-										<div class="portfolio-content">
-											<span class="label">University of Maryland</span>
-											<h3 class="title-style-01">Lead Developer</h3>
-											<p>Built multiple sites for the University. Their main site, news site, English department site,
-												Link shortner ... etc </p>
-											<p><span class="label"><a href="https://www.umdrightnow.umd.edu/"
-														target="_blank">umdrightnow.umd.edu</a></span></p>
-										</div><!--/.portfolio-content-->
-									</div><!--/.portfolio-overlay-->
-								</div><!--/.portfolio-box--><!--/.portfolio-box-->
-							</div><!--/.item-->
-							<div class="item filter-photoshop filter-html filter-wordpress">
-								<div class="portfolio-box">
-									<figure><img src="images/misc/crl.jpg" alt="" /></figure>
-									<div class="portfolio-overlay">
-										<div class="portfolio-content">
-											<span class="label">Center for Responsible Lending</span>
-											<h3 class="title-style-01">Lead Developer</h3>
-											<p>Built their customer facing website</p>
-											<p><span class="label"><a href="https://www.responsiblelending.org/"
-														target="_blank">responsiblelending.org</a></span></p>
-
-										</div><!--/.portfolio-content-->
-									</div><!--/.portfolio-overlay-->
-								</div><!--/.portfolio-box--><!--/.portfolio-box-->
-							</div><!--/.item-->
-							<div class="item filter-magento filter-javascript filter-photoshop">
-								<div class="portfolio-box">
-									<figure><img src="images/misc/epa.jpg" alt="" /></figure>
-									<div class="portfolio-overlay">
-										<div class="portfolio-content">
-											<span class="label">EPA Water Sense</span>
-											<h3 class="title-style-01">Senior Developer</h3>
-											<p>Built the main site for the EPA Water Sense program</p>
-											<p><span class="label"><a href="https://www.epa.gov/watersense/"
-														target="_blank">epa.gov/watersense</a></span></p>
-
-										</div><!--/.portfolio-content-->
-									</div><!--/.portfolio-overlay-->
-								</div><!--/.portfolio-box--><!--/.portfolio-box-->
-							</div><!--/.item-->
-							<div class="item filter-magento filter-php filter-wordpress">
-								<div class="portfolio-box">
-									<figure><img src="images/misc/guideWellFS.jpg" alt="" /></figure>
-									<div class="portfolio-overlay">
-										<div class="portfolio-content">
-											<span class="label">Guidewell Financial Solutions</span>
-											<h3 class="title-style-01">Lead Developer</h3>
-											<p>Built their main customer facing site with an integrated payment system.</p>
-											<p><span class="label"><a href="https://www.guidewellfs.org/"
-														target="_blank">guidewellfs.org</a></span></p>
-										</div><!--/.portfolio-content-->
-									</div><!--/.portfolio-overlay-->
-								</div><!--/.portfolio-box-->
-							</div><!--/.item-->
-							<div class="item filter-photoshop filter-html filter-wordpress">
-								<div class="portfolio-box">
-									<figure><img src="images/misc/sesync.jpg" alt="" /></figure>
-									<div class="portfolio-overlay">
-										<div class="portfolio-content">
-											<span class="label">SESYNC</span>
-											<h3 class="title-style-01">Lead Developer</h3>
-											<p>Built the main site for The National Socio-Environmental Synthesis Center (SESYNC)</p>
-											<p><span class="label"><a href="https://www.sesync.org/" target="_blank">sesync.org</a></span></p>
-
-										</div><!--/.portfolio-content-->
-									</div><!--/.portfolio-overlay-->
-								</div><!--/.portfolio-box-->
-							</div><!--/.item-->
-							<div class="item filter-php filter-javascript filter-php">
-								<div class="portfolio-box">
-									<figure><img src="images/misc/herbblock.jpg" alt="" /></figure>
-									<div class="portfolio-overlay">
-										<div class="portfolio-content">
-											<span class="label">Herblock Foundation</span>
-											<h3 class="title-style-01">Developer</h3>
-											<p>Helped build this award wining web site for the foundation.</p>
-											<p><span class="label"><a href="https://www.herbblockfoundation.org/"
-														target="_blank">herbblockfoundation.org</a></span></p>
-										</div><!--/.portfolio-content-->
-									</div><!--/.portfolio-overlay-->
-								</div><!--/.portfolio-box-->
-							</div><!--/.item-->
-							<div class="item filter-javascript filter-photoshop">
-								<div class="portfolio-box">
-									<figure><img src="images/misc/hayeslaw.jpg" alt="" /></figure>
-									<div class="portfolio-overlay">
-										<div class="portfolio-content">
-											<span class="label">Hayes Law</span>
-											<h3 class="title-style-01">Developer</h3>
-											<p>Helped the Hayes Law of North Carolina build their site and assist in improving their digital
-												presence</p>
-											<p><span class="label"><a href="https://www.hayeslawnc.com/"
-														target="_blank">hayeslawnc.com</a></span></p>
-										</div><!--/.portfolio-content-->
-									</div><!--/.portfolio-overlay-->
-								</div><!--/.portfolio-box-->
-							</div><!--/.item-->
-							<div class="item filter-magento filter-php filter-photoshop">
-								<div class="portfolio-box">
-									<figure><img src="images/misc/marriott-foundation2.jpg" alt="" /></figure>
-									<div class="portfolio-overlay">
-										<div class="portfolio-content">
-											<span class="label">The Marriott Foundation</span>
-											<h3 class="title-style-01">Lead Developer</h3>
-											<p>Built the main site for The Marriott Foundation. </p>
-											<p><span class="label"><a href="https://www.marriottfoundation.org/"
-														target="_blank">marriottfoundation.org</a></span></p>
-										</div><!--/.portfolio-content-->
-									</div><!--/.portfolio-overlay-->
-								</div><!--/.portfolio-box-->
-							</div><!--/.item-->
-						</div><!--/.portfolio-slider-->
-					</div><!--/.portfolio-row-->
-				</div><!--/.container-->
-			</div><!--/.section-->
-			<!--portfolio section end-->
-
-			<!-- Workflow Sections starts-->
-
-			<!-- work flow section visible above 768px start -->
-			<div id="flow" class="service-list section service-list-01 hidden-xs hidden-sm border-top-bottom">
-				<div class="container container-small">
-					<div class="title-block row text-center">
-						<div class="col col-md-6 col-md-push-3">
-							<div class="section-title">
-								<em class="font-weight-600">EvangadiTech</em>
-								<h2>Workflow</h2>
-								<span class="hexagon-icon"><i></i></span>
-							</div>
-							<!--/.section-title-->
-						</div>
-					</div>
-					<!--/.title-block-->
-					<div class="row">
-						<div class="col col-md-3 p-15">
-							<div class="servicebox servicebox-dark text-center matchheightbox">
-								<span class="service-icon"><i class="icon-clipboard"></i></span>
-
-								<div class="service-content">
-									<h3>1. Grasp business essentials</h3>
-									<p>
-										We start by gaining a deep understanding of your business's core operations, goals, and target
-										audience
-									</p>
-								</div>
-								<!--/.service-content-->
-							</div>
-							<!--/.servicebox-->
-						</div>
-						<!--/.col-->
-						<div class="col col-md-3 p-15">
-							<div class="servicebox servicebox-dark text-center matchheightbox">
-								<span class="service-icon"><i class="icon-strategy"></i></span>
-								<div class="service-content">
-									<h3>2. Formulate digital strategy</h3>
-									<p>
-										We develop a tailored digital roadmap to align technology solutions with your business objectives
-										and market dynamics.
-									</p>
-								</div>
-								<!--/.service-content-->
-							</div>
-							<!--/.servicebox-->
-						</div>
-						<!--/.col-->
-
-						<div class="col col-md-3 p-15">
-							<div class="servicebox servicebox-dark text-center matchheightbox">
-								<span class="service-icon"><i class="icon-browser"></i></span>
-								<div class="service-content">
-									<h3>3. UX/UI design & prototype </h3>
-									<p>
-										We craft intuitive and visually compelling user interfaces to enhance user experience and present a
-										functional prototype.
-									</p>
-								</div>
-								<!--/.service-content-->
-							</div>
-							<!--/.servicebox-->
-						</div>
-						<!--/.col-->
-						<div class="col col-md-3 p-15">
-							<div class="servicebox servicebox-dark text-center matchheightbox">
-								<span class="service-icon"><i class="icon-tools-2"></i></span>
-								<div class="service-content">
-									<h3>4. Application Development</h3>
-									<p>
-										We build the full application using robust coding practices, ensuring a scalable, efficient, and
-										high-quality product.
-									</p>
-								</div>
-								<!--/.service-content-->
-							</div>
-							<!--/.servicebox-->
-						</div>
-						<!--/.col-->
-						<div class="col col-md-3 p-15">
-							<div class="servicebox servicebox-dark text-center matchheightbox">
-								<span class="service-icon"><i class="icon-magnifying-glass"></i></span>
-								<div class="service-content">
-									<h3>5. Rigorous Testing</h3>
-									<p>
-										Rigorous testing protocols are implemented to uphold the highest quality standards, minimizing
-										post-deployment issues.
-									</p>
-								</div>
-								<!--/.service-content-->
-							</div>
-							<!--/.servicebox-->
-						</div>
-						<!--/.col-->
-						<div class="col col-md-3 p-15">
-							<div class="servicebox servicebox-dark text-center matchheightbox">
-								<span class="service-icon"><i class="icon-cloud"></i></span>
-								<div class="service-content">
-									<h3>6. Deployment</h3>
-									<p>
-										Efficiently launch your application, ensuring seamless integration and optimal performance in the
-										live environment.
-									</p>
-								</div>
-								<!--/.service-content-->
-							</div>
-							<!--/.servicebox-->
-						</div>
-						<!--/.col-->
-						<div class="col col-md-3 p-15">
-							<div class="servicebox servicebox-dark text-center matchheightbox">
-								<span class="service-icon"><i class="icon-recycle"></i></span>
-								<div class="service-content">
-									<h3>7. Enduring Maintenance</h3>
-									<p>
-										Ongoing support and updates to ensure your application remains secure, functional, and aligned with
-										evolving business needs.
-									</p>
-								</div>
-								<!--/.service-content-->
-							</div>
-							<!--/.servicebox-->
-						</div>
-						<!--/.col-->
-						<div class="col col-md-3 p-15">
-							<div class="servicebox servicebox-dark text-center matchheightbox">
-								<span class="service-icon"><i class="icon-pencil"></i></span>
-								<div class="service-content">
-									<h3>8. Staff Training</h3>
-									<p>
-										Comprehensive training to your team, empowering them to effectively utilize and manage the
-										application.
-									</p>
-								</div>
-								<!--/.service-content-->
-							</div>
-							<!--/.servicebox-->
-						</div>
-						<!--/.col-->
-					</div>
-					<!--/.row-->
-				</div>
-			</div>
-			<!-- Work flow section visible above 768px end  -->
-
-			<!--Partnership section start-->
-			<div id="models" class="section bg-gray animated-row">
-				<div class="container">
-					<div class="title-block row text-center">
-						<div class="col col-md-6 col-md-push-3">
-							<div class="section-title">
-								<em class="font-weight-600">Working together</em>
-								<h2>Partnership Models</h2>
-								<span class="hexagon-icon"><i></i></span>
-							</div><!--/.section-title-->
-						</div>
-					</div><!--/.title-block-->
-					<div class="row no-spacing-row v-middle-row">
-						<div class="col col-sm-4">
-							<div class="pricing-box text-center font-secondary animate" data-animate="fadeInUp">
-								<div class="pricing-col matchheightbox" data-text="B">
-									<div class="plan-details">
-										<span class="pricing-plan text-black m-b-10">Model #1</span>
-										<strong class="price text-primary font-weight-800">Project-Based</strong>
-										<span class="hexagon-icon hexagon-icon-gray m-b-20"><i></i></span>
-										<p class="font-primary">Streamlined collaboration model designed to bring your vision to life with
-											expertise and efficiency. In this model, our relationship is centered around a specific project,
-											tailored to meet your unique business needs.</p>
-									</div><!--/.plan-details-->
-								</div><!--/.pricing-col-->
-							</div><!--/.pricing-box-->
-						</div><!--/.col-->
-						<div class="col col-sm-4 pro-box">
-							<div class="pricing-box text-center font-secondary animate" data-animate="fadeInUp">
-								<div class="pricing-col matchheightbox" data-text="P">
-									<div class="plan-details">
-										<span class="pricing-plan text-white m-b-10">Model #2</span>
-										<strong class="price text-white font-weight-800">Dedicated Team</strong>
-										<span class="hexagon-icon hexagon-icon-white m-b-20"><i></i></span>
-										<p class="font-primary text-white">A comprehensive and holistic model crafted to serve as your
-											full-scale digital department. This model is specifically designed for businesses seeking a
-											reliable, long-term partner to handle all their digital needs with the same commitment and
-											expertise as an in-house team.</p>
-
-									</div><!--/.plan-details-->
-								</div><!--/.pricing-col-->
-							</div><!--/.pricing-box-->
-						</div><!--/.col-->
-						<div class="col col-sm-4">
-							<div class="pricing-box text-center font-secondary animate" data-animate="fadeInUp">
-								<div class="pricing-col matchheightbox" data-text="P">
-									<div class="plan-details">
-										<span class="pricing-plan text-black m-b-10">Model #3</span>
-										<strong class="price text-primary font-weight-800">On-Site Help</strong>
-										<span class="hexagon-icon hexagon-icon-gray m-b-20"><i></i></span>
-										<p class="font-primary">A dynamic and responsive service model designed to deliver direct, hands-on
-											assistance right at your business premises. This model is ideal for businesses seeking immediate,
-											in-person expertise in managing and executing their digital projects.</p>
-									</div><!--/.plan-details-->
-								</div><!--/.pricing-col-->
-							</div><!--/.pricing-box-->
-						</div><!--/.col-->
-					</div><!--/.row-->
-				</div><!--/.container-->
-			</div><!--/.section-->
-			<!--Partnership section end-->
-
-			<!-- Industries Section start -->
-			<div id="industries" class="section  border-top-bottom animated-row industries">
-				<div class="container section">
-					<div class="title-block row text-center">
-						<div class="col col-md-6 col-md-push-3">
-							<div class="section-title">
-								<em class="font-weight-600">EvangadiTech</em>
-								<h2>Industries</h2>
-								<span class="hexagon-icon"><i></i></span>
-							</div>
-						</div>
-						<!--/.col-->
-					</div>
-					<!--/.title-block-->
-					<div class="client-logos p-t-0">
-						<div class="container-fluid">
-							<div class="client-logos-slider owl-carousel industryCarousel">
-								<div class="item bg-gray">
-									<div class="servicebox text-center matchheightbox">
-										<span class="service-icon"><i class="fa fa-ambulance" aria-hidden="true"></i></span>
-										<div class="service-content">
-											<h3>Health care</h3>
-											<p>
-												Electronic Health Record (EHR) systems, Telemedicine
-												platforms, Health data analytics
-											</p>
-										</div>
-										<!--/.service-content-->
-									</div>
-									<!--/.servicebox-->
-								</div>
-								<!--/.item-->
-								<div class="item bg-gray">
-									<div class="servicebox text-center matchheightbox">
-										<span class="service-icon"><i class="fa fa-dollar" aria-hidden="true"></i></span>
-										<div class="service-content">
-											<h3>Finance and Banking</h3>
-											<p>
-												Mobile banking solutions, Payment processing systems,
-												Fraud detection software
-											</p>
-										</div>
-										<!--/.service-content-->
-									</div>
-									<!--/.servicebox-->
-								</div>
-								<!--/.item-->
-								<div class="item bg-gray">
-									<div class="servicebox text-center matchheightbox">
-										<span class="service-icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
-										<div class="service-content">
-											<h3>Education</h3>
-											<p>
-												Learning Management Systems (LMS), Student information
-												systems, Virtual classrooms and e-learning platforms
-											</p>
-										</div>
-										<!--/.service-content-->
-									</div>
-									<!--/.servicebox-->
-								</div>
-								<!--/.item-->
-								<div class="item bg-gray">
-									<div class="servicebox text-center matchheightbox">
-										<span class="service-icon"><i class="fa fa-handshake-o" aria-hidden="true"></i></span>
-										<div class="service-content">
-											<h3>Retail (E-commerce)</h3>
-											<p>
-												E-commerce platforms, Inventory management software,
-												Customer relationship management (CRM) systems
-											</p>
-										</div>
-										<!--/.service-content-->
-									</div>
-									<!--/.servicebox-->
-								</div>
-								<!--/.item-->
-								<div class="item bg-gray">
-									<div class="servicebox text-center matchheightbox">
-										<span class="service-icon"><i class="fa fa-taxi" aria-hidden="true"></i></span>
-										<div class="service-content">
-											<h3>Travel and Transportation</h3>
-											<p>
-												Booking and reservation systems, A ride sharing
-												platform, Logistics and supply chain solutions
-											</p>
-										</div>
-										<!--/.service-content-->
-									</div>
-									<!--/.servicebox-->
-								</div>
-								<!--/.item-->
-								<div class="item bg-gray">
-									<div class="servicebox text-center matchheightbox">
-										<span class="service-icon"><i class="fa fa-institution" aria-hidden="true"></i></span>
-										<div class="service-content">
-											<h3>Enterprise Software</h3>
-											<p>
-												Enterprise Resource Planning (ERP) systems, Customer
-												Relationship Management (CRM) software, project
-												management tools
-											</p>
-										</div>
-										<!--/.service-content-->
-									</div>
-									<!--/.servicebox-->
-								</div>
-								<!--/.item-->
-								<div class="item bg-gray">
-									<div class="servicebox text-center matchheightbox">
-										<span class="service-icon"><i class="fa fa-gears" aria-hidden="true"></i></span>
-										<div class="service-content">
-											<h3>Manufacturing and Supply Chain</h3>
-											<p>
-												Manufacturing execution systems (MES), Quality control
-												and assurance software, Warehouse management systems
-											</p>
-										</div>
-										<!--/.service-content-->
-									</div>
-									<!--/.servicebox-->
-								</div>
-								<!--/.item-->
-							</div>
-							<!--/.client-logos-slider-->
-						</div>
-						<!--/.container-fluid-->
-					</div>
-					<!--/.section-->
-				</div>
-			</div>
-			<!--Industries section  end-->
-
-			<!--Staff training section start-->
-			<div id="training" class="section bg-gray portfolio-section animated-row staff-training">
-				<div class="container container-small">
-					<div class="title-block row text-center">
-						<div class="col col-md-6 col-md-push-3">
-							<div class="section-title">
-								<em class="font-weight-600">Evangadi Academy</em>
-								<h2>Staff training</h2>
-								<span class="hexagon-icon"><i></i></span>
-							</div>
-							<!--/.section-title-->
-						</div>
-					</div>
-				</div>
-				<div class="section facts-section bg-cover bg-overlay parallaxie">
-					<div class="container">
-						<div class="row">
-							<div class="col col-sm-4">
-								<div class="fact-box font-secondary">
-									<span class="fact-icon"><i class="icon-pencil"></i></span>
-									<h3>Learn the basics</h3>
-								</div>
-							</div><!--/.col-->
-							<div class="col col-sm-4">
-								<div class="fact-box font-secondary">
-									<span class="fact-icon"><i class="icon-tools-2"></i></span>
-									<h3>Build with us</h3>
-								</div>
-							</div><!--/.col-->
-							<div class="col col-sm-4">
-								<div class="fact-box font-secondary">
-									<span class="fact-icon"><i class="icon-expand"></i></span>
-									<h3>Take over the project</h3>
-								</div>
-							</div><!--/.col-->
-						</div><!--/.row-->
-					</div><!--/.container-->
-				</div><!--/.section-->
-			</div>
-			<!--Staff training section end-->
-
-			<!--faq section start-->
-			<div id="faq" class="section  animated-row staff-training">
-				<div class="container container-small">
-					<div class="title-block row text-center">
-						<div class="col col-md-6 col-md-push-3">
-							<div class="section-title">
-								<em class="font-weight-600">EvangadiTech</em>
-								<h2>FAQ</h2>
-								<span class="hexagon-icon"><i></i></span>
-							</div>
-							<!--/.section-title-->
-						</div>
-					</div>
-				</div>
-				<div class="section faq-section contact-section animated-row">
-					<div class="container">
-						<div class="row">
-							<div class="col col-sm-6">
-								<div class="panel-group m-0" id="accordion">
-									<div class="panel panel-default accordion-custom">
-										<div class="panel-heading">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true">How
-													long does it typically take to develop a custom application?</a>
-											</h4>
-										</div>
-										<div id="collapse1" class="panel-collapse collapse ">
-											<div class="panel-body">The timeline for development varies depending on the complexity and scope
-												of the project. We work closely with our clients to understand their requirements and provide
-												realistic timelines for delivery.
-											</div>
-										</div>
-									</div><!--/.panel-->
-									<div class="panel panel-default accordion-custom">
-										<div class="panel-heading">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true">Do you
-													develop both web and
-													mobile applications?</a>
-											</h4>
-										</div>
-										<div id="collapse2" class="panel-collapse collapse ">
-											<div class="panel-body">Yes, we have expertise in developing both web and mobile applications
-												across various platforms including iOS, Android, and web browsers.
-											</div>
-										</div>
-									</div><!--/.panel-->
-									<div class="panel panel-default accordion-custom">
-										<div class="panel-heading">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="true">Can
-													you help us with
-													setting up and managing data centers?</a>
-											</h4>
-										</div>
-										<div id="collapse3" class="panel-collapse collapse ">
-											<div class="panel-body">Absolutely, we offer end-to-end solutions for data center development
-												including planning, design, implementation, and ongoing management to ensure optimal performance
-												and security.
-											</div>
-										</div>
-									</div><!--/.panel-->
-
-								</div>
-							</div><!--/.col-->
-							<div class="col col-sm-6">
-								<div class="panel-group m-0" id="accordion">
-									<div class="panel panel-default accordion-custom">
-										<div class="panel-heading">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="true">What
-													is your approach to project management and communication?</a>
-											</h4>
-										</div>
-										<div id="collapse5" class="panel-collapse collapse ">
-											<div class="panel-body">We follow agile methodologies for project management to ensure
-												flexibility, transparency, and timely delivery. We maintain open lines of communication with our
-												clients through regular meetings, progress reports, and collaboration tools.
-											</div>
-										</div>
-									</div><!--/.panel-->
-									<div class="panel panel-default accordion-custom">
-										<div class="panel-heading">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="true"> What
-													kind of IT consulting
-													services do you provide?</a>
-											</h4>
-										</div>
-										<div id="collapse4" class="panel-collapse collapse ">
-											<div class="panel-body">Our IT consulting services cover a broad spectrum including IT strategy
-												development, digital transformation, cybersecurity, cloud migration,infrastructure optimization,
-												and more.
-											</div>
-										</div>
-									</div><!--/.panel-->
-									<div class="panel panel-default accordion-custom">
-										<div class="panel-heading">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="true">Do you
-													provide ongoing
-													support and maintenance for the applications you develop?</a>
-											</h4>
-										</div>
-										<div id="collapse6" class="panel-collapse collapse ">
-											<div class="panel-body">Absolutely, we offer comprehensive support and maintenance services to
-												ensure that your applications remain up-to-date, secure, and optimized for performance even
-												after deployment.
-											</div>
-										</div>
-									</div><!--/.panel-->
-								</div>
-							</div><!--/.col-->
-						</div><!--/.row-->
-					</div><!--/.container-->
-				</div><!--/.section-->
-			</div>
-			<!--faq section end-->
-
-			<!-- work flow section visible above 768px start -->
-			<!-- <div id="jobs" class="service-list section jobs-section service-list-01 border-top-bottom">
-				<div class="container container-small">
-					<div class="title-block row text-center">
-						<div class="col col-md-6 col-md-push-3">
-							<div class="section-title">
-								<em class="font-weight-600">EvangadiTech</em>
-								<h2>Open Positions</h2>
-								<span class="hexagon-icon"><i></i></span>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col col-md-3 p-15">
-							<div class="servicebox servicebox-dark text-center matchheightbox">
-								<span class="service-icon"><img
-										src="https://www.evangadi.com/themes/humans//assets/hammerlook/img/icon/bi.png"
-										alt="img"></i></span>
-								<div class="service-content">
-									<h3>Data <br> Engineer</h3>
-									<p>
-										Design, develop, and maintain robust data pipelines.
-									</p>
-									<div class="btn-row">
-										<a href="https://evangaditech.com/docs/Data-Engineer-Job-Description.pdf" class="btn"
-											target="_blank">Apply
-											<span><i class="fa fa-chevron-right"></i></span></a>
-									</div>
-									<br>
-								</div>
-							</div>
-						</div>
-						<div class="col col-md-3 p-15">
-							<div class="servicebox servicebox-dark text-center matchheightbox">
-								<span class="service-icon"><img
-										src="https://www.evangadi.com/themes/humans//assets/hammerlook/img/icon/aws2.png"
-										alt="img"></i></span>
-								<div class="service-content">
-									<h3>AWS <br> Cloud Engineer</h3>
-									<p>
-										Implement and manage cloud-based efficient solutions.
-									</p>
-									<div class="btn-row">
-										<a href="https://evangaditech.com/docs/AWS-Cloud-Engineer-Job-Description.pdf" class="btn"
-											target="_blank">Apply
-											<span><i class="fa fa-chevron-right"></i></span></a>
-									</div>
-									<br>
-								</div>
-							</div>
-						</div>
-						<div class="col col-md-3 p-15">
-							<div class="servicebox servicebox-dark text-center matchheightbox">
-								<span class="service-icon"><img
-										src="https://www.evangadi.com/themes/humans//assets/hammerlook/img/icon/mulesoft.png"
-										alt="img"></i></span>
-								<div class="service-content">
-									<h3>MuleSoft <br> Developer</h3>
-									<p>
-										Develop and customize MuleSoft integrations, APIs, and connectors.
-									</p>
-									<div class="btn-row">
-										<a href="https://evangaditech.com/docs/MuleSoft-Developer-Job-Description.pdf" class="btn"
-											target="_blank">Apply
-											<span><i class="fa fa-chevron-right"></i></span></a>
-									</div>
-									<br>
-								</div>
-							</div>
-						</div>
-						<div class="col col-md-3 p-15">
-							<div class="servicebox servicebox-dark text-center matchheightbox">
-								<span class="service-icon"><img
-										src="https://www.evangadi.com/themes/humans//assets/hammerlook/img/icon/sharepoint.png"
-										alt="img"></i></span>
-
-								<div class="service-content">
-									<h3>SharePoint Developer</h3>
-									<p>
-										Design, develop, and deploy custom SharePoint Online solutions.
-									</p>
-
-									<div class="btn-row">
-										<a href="https://evangaditech.com/docs/SharePoint-Developer-Job-Description.pdf" class="btn"
-											target="_blank">Apply
-											<span><i class="fa fa-chevron-right"></i></span></a>
-									</div>
-									<br>
-								</div>
-							</div>
-						</div>
-						<div class="col col-md-3 p-15">
-							<div class="servicebox servicebox-dark text-center matchheightbox">
-								<span class="service-icon"><img
-										src="https://www.evangadi.com/themes/humans//assets/hammerlook/img/icon/sql.png"
-										alt="img"></i></span>
-								<div class="service-content">
-									<h3>MS SQL DBA Systems Administrator</h3>
-									<p>
-										Design, develop, and maintain robust MS SQL databases.
-									</p>
-									<div class="btn-row">
-										<a href="https://evangaditech.com/docs/MS-SQL-DBA-Systems-Administrator-Job-Description.pdf"
-											class="btn" target="_blank">Apply
-											<span><i class="fa fa-chevron-right"></i></span></a>
-									</div>
-									<br>
-								</div>
-							</div>
-						</div>
-						<div class="col col-md-3 p-15">
-							<div class="servicebox servicebox-dark text-center matchheightbox">
-								<span class="service-icon"><img
-										src="https://www.evangadi.com/themes/humans//assets/hammerlook/img/icon/qa.png"
-										alt="img"></i></span>
-								<div class="service-content">
-									<h3>Software <br> Tester (QA)</h3>
-									<p>
-										Design, develop, and execute comprehensive test plans and test cases.
-									</p>
-									<div class="btn-row">
-										<a href="https://evangaditech.com/docs/Software-Tester-QA-Job-Description.pdf" class="btn"
-											target="_blank">Apply
-											<span><i class="fa fa-chevron-right"></i></span></a>
-									</div>
-									<br>
-								</div>
-							</div>
-						</div>
-						<div class="col col-md-3 p-15">
-							<div class="servicebox servicebox-dark text-center matchheightbox">
-								<span class="service-icon"><img
-										src="https://www.evangadi.com/themes/humans//assets/hammerlook/img/icon/english-2.png"
-										alt="img"></i></span>
-								<div class="service-content">
-									<h3>English <br> Instructor</h3>
-									<p>
-										Develop an English curriculum tailored to beginners and teach.
-									</p>
-									<div class="btn-row">
-										<a href="https://evangaditech.com/docs/English-Instructor-Job-Description.pdf" class="btn"
-											target="_blank">Apply
-											<span><i class="fa fa-chevron-right"></i></span></a>
-									</div>
-									<br>
-								</div>
-							</div>
-						</div>
-						<div class="col col-md-3 p-15">
-							<div class="servicebox servicebox-dark text-center matchheightbox">
-								<span class="service-icon"><img src="/images/misc/icons/ux-ui.png" alt="img"></i></span>
-								<div class="service-content">
-									<h3>UX/UI <br> Designer</h3>
-									<p>
-										Design and deliver intuitive and visually appealing user interfaces.
-									</p>
-									<div class="btn-row">
-										<a href="https://evangaditech.com/docs/UX_UI Designer-Job-Description.pdf" class="btn"
-											target="_blank">Apply
-											<span><i class="fa fa-chevron-right"></i></span></a>
-									</div>
-									<br>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> -->
-			<!-- Work flow section visible above 768px end  -->
-
-			<!--contact section start-->
-			<div id="contact" class="contact-section">
-				<div class="row no-spacing-row" style="max-height: 400px">
-
-					<div class="contact-box text-black">
-						<div class="row">
-							<div class="col col-sm-3"></div>
-							<div class="col col-sm-3">
-								<div class="contact-info text-center">
-									<span class="contact-icon"><i class="icon-chat"></i></span>
-									<h3 class="text-black">Let's Talk</h3>
-									<span>Phone: 1-202-386-2702</span>
-								</div>
-								<!--/.contact-info-->
-							</div>
-							<!--/.col-->
-							<div class="col col-sm-3">
-								<div class="contact-info text-center">
-									<span class="contact-icon"><i class="icon-envelope"></i></span>
-									<h3 class="text-black">Email Us</h3>
-									<span><a href="/cdn-cgi/l/email-protection#deadabaeaeb1acaa9ebba8bfb0b9bfbab7f0bdb1b3"><span class="__cf_email__" data-cfemail="196a6c6969766b6d597c6f78777e787d70377a7674">[email&#160;protected]</span></a></span>
-								</div>
-								<!--/.contact-info-->
-							</div>
-							<div class="col col-sm-3"></div>
-							<!--/.col-->
-						</div>
-						<!--/.row-->
-						<!-- the contact form here -->
-						<!--/#contactform-->
-					</div>
-					<!--/.contact-box-->
-
-				</div>
-				<!--/.row-->
-			</div>
-			<!--/.contact-section-->
-
-		</div><!--/#main-->
-		<!--footer start-->
-		<footer id="footer" class="text-white">
-			<div class="container-fluid">
-				<div class="row v-middle-row footer-top-row">
-					<div class="v-middle-row text-center">
-						<span class="text-md p-l-10 p-r-10 text-white">&copy; Evangadi INC. All Rights Reserved.</span>
-					</div>
-				</div>
-				<!--/.row-->
-			</div>
-			<!--/.container-fluid-->
-		</footer>
-		<!--/#footer-->
-		<!--footer end-->
-	</div><!--/#wrapper-->
-	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/waypoints.min.js"></script>
-	<script src="js/jquery.appear.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.owl-filter.js"></script>
-	<script src="js/jquery.easypiechart.min.js"></script>
-	<script src="js/jquery.matchHeight-min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/jquery.counterup.js"></script>
-	<script src="js/jquery.validate.js"></script>
-	<script src="js/parallaxie.js"></script>
-	<script src="js/snazzy-info-window.min.js"></script>
-	<script src="js/general.js?v=12"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"103b677ea7984e48a4a24188c228b65f","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+        // }
+        // sGame()
+    </script>
 </body>
 
 </html>
