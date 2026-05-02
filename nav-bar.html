@@ -3,59 +3,70 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nav-bar</title>
     <style>
-        body{
-                margin: 0;
-                padding: 0;
+        body {
+            margin: 0;
+            padding: 0;
         }
-        .nav-bar{
+
+        .nav-bar {
             display: flex;
-          justify-content: space-between;
-          margin-left: 10px;
-          margin-right: 10px;
+            justify-content: space-between;
+            margin-left: 10px;
+            margin-right: 10px;
             box-shadow: 19px 1px 10px 1px grey;
             margin: 0;
         }
- .logo{
-    font-weight: bolder;
-    color: black;
-    margin-left: 13px;
- }
- .logo a{
-    text-decoration: none;
-    color: black;
- }
- .logo span{
-    color: rgb(79, 12, 249);
- }
- .nav-links{
-    margin-left: auto;
-    margin-right: auto;
- }
-        .nav-links ul{
+
+        .logo {
+            font-weight: bolder;
+            color: black;
+            margin-left: 13px;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .logo span {
+            color: rgb(79, 12, 249);
+        }
+
+        .nav-links {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .nav-links ul {
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         .nav-links ul a {
             text-decoration: none;
         }
 
-       .nav-links ul a li{
+        .nav-links ul a li {
             list-style: none;
             padding: 10px;
-            font-size: 18px;   
+            font-size: 18px;
         }
-        .nav-links ul a li:hover{
+
+        .nav-links ul a li:hover {
             color: blue;
             background-color: beige;
             border-radius: 10px;
         }
-        .social-media-icons{
-          list-style: none;
+
+        .social-media-icons {
+            list-style: none;
             padding: 20px;
 
             font-size: 23px;
@@ -64,89 +75,95 @@
             display: flex;
             margin-right: 0;
             margin-bottom: 3px;
-            
-               
+
+
         }
 
-        .social-media-icons i{
+        .social-media-icons i {
             padding: 4px;
         }
-        .social-media-icons i:hover{
+
+        .social-media-icons i:hover {
             color: blue;
         }
-        .toggler i{
-            
-          color: red;
-display: none;
-text-align: right;
-align-items: right;
 
-        }
-      @media (max-width:815px){
-       .social-media-icons{
-        display: none;
-       }
+        .toggler i {
 
-       .nav-links ul a li{
-         display: flex;
-         flex-direction: column;
-        justify-content: space-between;
-       }
-    .nav-bar{
-        box-shadow:none;
-        display: flex;
-        justify-content: space-between;
-    
-        
-    }
-    } 
-       @media (max-width:630px){
-        .nav-links{
+            color: red;
             display: none;
-            position: absolute;
-            top: 49px;
-            left: 5px;
-            right: 5px;
-            justify-content: center;
-            align-items: center
-            ;
-            background-color: antiquewhite;
-            width: auto;
+            text-align: right;
+            align-items: right;
+
         }
 
-        .show-links{
-            display: block !important;
-        transition: ease 16s !important; 
-        }
-        .nav-links ul{
-            
-           align-items: center;
-            flex-direction: column;
-        }
-      .nav-links ul a{
-        width: 100%;
-      }
-           .nav-links ul a:hover{
-            color: blue;
-       
-            
-            background-color: beige;
-            border-radius: 10px;
-            align-items: center;
-            justify-content: center;
-           
-        }
-        .toggler i{
-            display: block;
-            margin-top: 23px;
-            margin-right: 4px;
-            font-size: 25px;
-            color: black;
-        
-        }
-       }
+        @media (max-width:815px) {
+            .social-media-icons {
+                display: none;
+            }
 
-     
+            .nav-links ul a li {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .nav-bar {
+                box-shadow: none;
+                display: flex;
+                justify-content: space-between;
+
+
+            }
+        }
+
+        @media (max-width:630px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 49px;
+                left: 5px;
+                right: 5px;
+                justify-content: center;
+                align-items: center;
+                background-color: antiquewhite;
+                width: auto;
+            }
+
+            .show-links {
+                display: block !important;
+                transition: ease 16s !important;
+            }
+
+            .nav-links ul {
+
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .nav-links ul a {
+                width: 100%;
+            }
+
+            .nav-links ul a:hover {
+                color: blue;
+
+
+                background-color: beige;
+                border-radius: 10px;
+                align-items: center;
+                justify-content: center;
+
+            }
+
+            .toggler i {
+                display: block;
+                margin-top: 23px;
+                margin-right: 4px;
+                font-size: 25px;
+                color: black;
+
+            }
+        }
     </style>
 </head>
 
@@ -158,9 +175,9 @@ align-items: right;
             <h2><a href="#">CODING-WITH- <SPan>HABTAE</SPan></a></h2>
         </div>
 
-     <div class="toggler">
-        <i class="fa-solid fa-bars" id="togglee"></i>
-     </div>
+        <div class="toggler">
+            <i class="fa-solid fa-bars" id="togglee"></i>
+        </div>
         <div class="nav-links " id="vavs">
             <ul>
                 <a href="">
@@ -189,13 +206,13 @@ align-items: right;
 
 
     <script>
-       const toglerbtn=document.getElementById('togglee');
-       const navlinks = document.getElementById('vavs');
-    
-       
-toglerbtn.addEventListener('click',function(btnn){ 
- navlinks.classList.toggle("show-links");
-})
+        const toglerbtn = document.getElementById('togglee');
+        const navlinks = document.getElementById('vavs');
+
+
+        toglerbtn.addEventListener('click', function (btnn) {
+            navlinks.classList.toggle("show-links");
+        })
     </script>
 </body>
 
